@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia de Regras e Golpes de Jiu-Jitsu para alunos da academia Invictus Fight. Consulte pontuações, categorias e o que é permitido por faixa e idade.">
+    <title>Invictus Fight - Guia de Regras Jiu-Jitsu</title>
+    <style>
+        /* * PROPÓSITO DO SITE:
+         * Este site é um guia rápido e responsivo sobre regras e golpes permitidos
+         * no Jiu-Jitsu (base CBJJ/IBJJF) para alunos da Invictus Fight - Equipe André Soares.
+         * Foco em acessibilidade, UX e design mobile-first nas cores preto, vermelho e branco.
+         */
+
+        :root {
+            --bg-color: #0a0a0a;
+            --surface-color: #1a1a1a;
+            --surface-light: #2a2a2a;
+            --primary-color: #d32f2f;
+            --primary-hover: #b71c1c;
+            --text-main: #f5f5f5;
+            --text-muted: #b0b0b0;
+            --white: #ffffff;
+            --black: #000000;
+            --alert-bg: rgba(211, 47, 47, 0.15);
+            --alert-border: #d32f2f;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            margin-top: 0;
+            color: var(--white);
+            font-weight: 700;
+        }
+        
+        h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 1rem; }
+        h2 { font-size: 1.8rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem; display: inline-block;}
+        h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--primary-color); }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover, a:focus {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        /* Utilities */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: var(--primary-hover);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-outline:hover, .btn-outline:focus {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--surface-color);
+            border-bottom: 3px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        .logo-text {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .logo-subtext {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            font-weight: normal;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a:focus {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--surface-color);
+        }
+
+        /* Hero */
+        #hero {
+            text-align: center;
+            padding: 6rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%231a1a1a" width="100" height="100"/><path fill="%232a2a2a" d="M0 0h50v50H0zM50 50h50v50H50z"/></svg>');
+            background-size: cover;
+            border-bottom: 1px solid var(--surface-light);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Alert Box */
+        .alert {
+            background-color: var(--alert-bg);
+            border-left: 5px solid var(--alert-border);
+            padding: 1rem 1.5rem;
+            border-radius: 0 4px 4px 0;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .alert strong {
+            color: var(--white);
+        }
+
+        /* Regras Links */
+        .rules-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Table */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--surface-light);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--surface-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pts {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Cards Grid Layout */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            background-color: var(--surface-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-top: 5px solid var(--text-muted);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-green { border-top-color: #4caf50; }
+        .card-white { border-top-color: #ffffff; }
+        .card-blue { border-top-color: #2196f3; }
+        .card-purple { border-top-color: #9c27b0; }
+        .card-brown { border-top-color: #795548; }
+        .card-black { border-top-color: #000000; border: 1px solid #333; border-top: 5px solid #000000; }
+
+        .belt-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .block-allow, .block-deny {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 6px;
+            background-color: var(--surface-color);
+        }
+
+        .block-allow h4 { color: #4caf50; border-bottom: 1px solid #4caf50; padding-bottom: 5px; }
+        .block-deny h4 { color: #f44336; border-bottom: 1px solid #f44336; padding-bottom: 5px; }
+
+        .card ul, .category-list {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        .card li, .category-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .category-list li span {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .disclaimer-text {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: var(--surface-light);
+            border-radius: 4px;
+        }
+
+        /* Dicas */
+        .dicas-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .dicas-list li {
+            background-color: var(--surface-light);
+            margin-bottom: 0.8rem;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .dicas-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ */
+        details {
+            background-color: var(--surface-light);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            background-color: var(--surface-light);
+            transition: background-color 0.2s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary:hover, summary:focus {
+            background-color: var(--surface-color);
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 1.2rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            line-height: 1;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        .faq-content {
+            padding: 0 1.2rem 1.2rem 1.2rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-color);
+            border-top: 2px solid var(--surface-light);
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .footer-logo img {
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--surface-light);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (min-width: 768px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .card-green, .card-white {
+                grid-column: span 2;
+            }
+            nav ul {
+                justify-content: flex-end;
+            }
+            .header-content {
+                flex-wrap: nowrap;
+            }
+            nav {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 1rem;
+            }
+            h1 { font-size: 1.8rem; }
+            section { padding: 3rem 0; }
+            .rules-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo-area" aria-label="Início Invictus Fight">
+                <img src="logo.png" alt="Logo Invictus Fight" class="logo-img" onerror="this.src='image_0b7499.png'">
+                <div>
+                    <div class="logo-text">Invictus Fight</div>
+                    <div class="logo-subtext">Equipe André Soares</div>
+                </div>
+            </a>
+            <nav aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#sobre">Sobre as Regras</a></li>
+                    <li><a href="#categorias">Categorias</a></li>
+                    <li><a href="#pontuacao">Pontuação</a></li>
+                    <li><a href="#faixas">Regras por Faixa</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Guia de Regras e Golpes Permitidos por Faixa</h1>
+                <p class="hero-subtitle">Um resumo prático para os alunos da Invictus Fight. Entenda a pontuação, o sistema de pesos e o que é permitido no tatame, baseado nas normas das federações oficiais.</p>
+                <a href="#faixas" class="btn">Ver regras por faixa</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <h2>Como funcionam as regras?</h2>
+                <p>O Jiu-Jitsu esportivo possui regras estritas para garantir a segurança dos atletas e a fluidez das lutas. Este guia utiliza como base as diretrizes das principais federações, como a <strong>CBJJ (Confederação Brasileira de Jiu-Jitsu)</strong> e a <strong>IBJJF (International Brazilian Jiu-Jitsu Federation)</strong>.</p>
+                <p>O combate é decidido por finalização, acúmulo de pontos, vantagens ou decisão do árbitro. Além disso, certos golpes são restritos de acordo com a graduação (faixa) e a idade do atleta, pois exigem maior controle e maturidade corporal.</p>
+                
+                <div class="rules-links">
+                    <a href="https://ibjjf.com/books-videos" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Consultar Regras IBJJF</a>
+                    <a href="https://cbjj.com.br/books-videos" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Consultar Regras CBJJ</a>
+                </div>
+
+                <div class="alert" role="alert">
+                    <span style="font-size: 1.5rem;">⚠️</span>
+                    <div>
+                        <strong>Aviso Importante:</strong> Este site é um material didático de apoio. Confirme a legalidade de um golpe com seu <strong>professor</strong> e leia atentamente o <strong>edital do campeonato</strong> que você vai disputar, pois detalhes podem mudar entre organizações.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categorias">
+            <div class="container">
+                <h2>Categorias de Peso e Idade (CBJJ/IBJJF)</h2>
+                
+                <div class="cards-grid grid-2">
+                    <div class="card">
+                        <h3>Idades (Ano de Nascimento)</h3>
+                        <p>O ano de nascimento determina sua categoria, não a data exata do aniversário no dia do evento.</p>
+                        <ul class="category-list">
+                            <li><span>Pré-Mirim:</span> 4, 5 e 6 anos</li>
+                            <li><span>Mirim:</span> 7, 8 e 9 anos</li>
+                            <li><span>Infantil:</span> 10, 11 e 12 anos</li>
+                            <li><span>Infanto-Juvenil:</span> 13, 14 e 15 anos</li>
+                            <li><span>Juvenil:</span> 16 e 17 anos</li>
+                            <li><span>Adulto:</span> 18 a 29 anos</li>
+                            <li><span>Master 1 ao 7:</span> A partir de 30 anos</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Divisão de Pesos</h3>
+                        <p>Os pesos são sempre checados <strong>COM KIMONO</strong> antes da primeira luta. Não bater o peso resulta em desclassificação imediata.</p>
+                        <p>Para crianças e juvenis, existem mais variações de peso em relação aos adultos. Sempre verifique a tabela específica no edital. Abaixo está a tabela oficial básica para <strong>Adulto/Master (Masculino e Feminino)</strong>.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Tabela de Peso Adulto / Master (Com Kimono)</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Masculino (Até)</th>
+                                <th>Feminino (Até)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Galo</td>
+                                <td>57.5 kg</td>
+                                <td>48.5 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Pluma</td>
+                                <td>64.0 kg</td>
+                                <td>53.5 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Pena</td>
+                                <td>70.0 kg</td>
+                                <td>58.5 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Leve</td>
+                                <td>76.0 kg</td>
+                                <td>64.0 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Médio</td>
+                                <td>82.3 kg</td>
+                                <td>69.0 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Meio-Pesado</td>
+                                <td>88.3 kg</td>
+                                <td>74.0 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Pesado</td>
+                                <td>94.3 kg</td>
+                                <td>79.3 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Super-Pesado</td>
+                                <td>100.5 kg</td>
+                                <td>84.3 kg</td>
+                            </tr>
+                            <tr>
+                                <td>Pesadíssimo</td>
+                                <td>Sem Limite Máximo</td>
+                                <td>Sem Limite Máximo</td>
+                            </tr>
+                            <tr>
+                                <td>Absoluto</td>
+                                <td>Peso Aberto</td>
+                                <td>Peso Aberto</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="pontuacao">
+            <div class="container">
+                <h2>Pontuação Básica</h2>
+                <p>No Jiu-Jitsu, não basta apenas chegar à posição. Para que os pontos sejam concedidos, o atleta precisa <strong>estabilizar e manter o controle da posição por pelo menos 3 segundos</strong> contínuos.</p>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ação / Posição</th>
+                                <th>Pontos</th>
+                                <th>Descrição (Estabilização de 3 segundos)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Queda</td>
+                                <td class="pts">2</td>
+                                <td>Derrubar o adversário e estabilizá-lo no solo por <strong>3 segundos</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>Raspagem</td>
+                                <td class="pts">2</td>
+                                <td>Inverter a posição estando por baixo (na guarda ou meia-guarda) e estabilizar o controle por cima por <strong>3 segundos</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>Joelho na Barriga</td>
+                                <td class="pts">2</td>
+                                <td>Colocar o joelho na barriga do adversário deitado, mantendo a postura reta e o pé de apoio no chão por <strong>3 segundos</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>Passagem de Guarda</td>
+                                <td class="pts">3</td>
+                                <td>Superar as pernas do adversário e estabilizar o controle lateral (cem quilos/norte-sul) livre de bloqueios por <strong>3 segundos</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>Montada</td>
+                                <td class="pts">4</td>
+                                <td>Sentar sobre o tronco do adversário de forma limpa, com os joelhos no chão, e estabilizar a posição por <strong>3 segundos</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>Pegada de Costas</td>
+                                <td class="pts">4</td>
+                                <td>Controlar as costas do adversário colocando os dois ganchos (calcanhares por dentro das coxas) e estabilizar por <strong>3 segundos</strong>. Cruzar os pés anula a pontuação.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Vantagens e Punições</h3>
+                <p><strong>Vantagem:</strong> É concedida quando o atleta quase conquista uma posição de pontuação (ex: passa mas não estabiliza os 3 segundos) ou encaixa uma finalização que gera perigo real, mas o oponente escapa.</p>
+                <p><strong>Punição (Falta):</strong> Dada por atitudes antidesportivas, amarrar a luta, fugir do tatame ou usar pegadas ilegais. O acúmulo reverte em vantagens/pontos para o adversário, podendo levar à desclassificação.</p>
+            </div>
+        </section>
+
+        <section id="faixas">
+            <div class="container">
+                <h2>Regras e Golpes: O que é permitido?</h2>
+                
+                <div class="cards-grid">
+                    
+                    <div class="card card-green">
+                        <h3 class="belt-title">🥋 Crianças e Infanto-Juvenil (Até 15 anos)</h3>
+                        <p>Faixas: Cinza, Amarela, Laranja e Verde. As regras para crianças são extremamente focadas na preservação e segurança do desenvolvimento físico do atleta.</p>
+                        
+                        <div class="block-allow">
+                            <h4>✓ Permitido</h4>
+                            <ul>
+                                <li>Quedas sem projetar a cabeça do oponente.</li>
+                                <li>Raspagens, passagens de guarda, montada e costas.</li>
+                                <li>Chaves de braço e ombro (Armlock, Kimura, Americana).</li>
+                                <li>Mata-leão e estrangulamentos básicos com as lapelas (Cruzado, Relógio).</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="block-deny">
+                            <h4>✕ Proibido (Risco / Desclassificação)</h4>
+                            <ul>
+                                <li><strong>Qualquer chave de perna/pé:</strong> Completamente proibido em qualquer idade infantil/infanto.</li>
+                                <li><strong>Estrangulamento Ezequiel:</strong> Proibido até a categoria Infantil (12 anos).</li>
+                                <li><strong>Triângulo puxando a cabeça:</strong> Proibido até a categoria Infantil (12 anos).</li>
+                                <li><strong>Omoplata:</strong> Proibido até a categoria Infantil (12 anos).</li>
+                                <li><strong>Guilhotina / Estrangulamentos frontais:</strong> Proibido até a categoria Infanto-Juvenil (15 anos).</li>
+                                <li><strong>Pular na Guarda:</strong> Proibido saltar; é preciso sentar de forma controlada.</li>
+                                <li>Mão de vaca, chaves de cervical, bate-estaca, chaves de bíceps/panturrilha.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card card-white">
+                        <h3 class="belt-title">🥋 Faixa Branca (Adulto / Master)</h3>
+                        <div class="block-allow">
+                            <h4>✓ Permitido</h4>
+                            <ul>
+                                <li>Todas as imobilizações, passagens e raspagens.</li>
+                                <li>Finalizações clássicas: Armlock, Kimura, Americana, Omoplata.</li>
+                                <li>Estrangulamentos (lapela, triângulos, guilhotinas limpas).</li>
+                                <li><strong>Chave de pé reta:</strong> a perna que ataca deve estar cruzada por fora do quadril do oponente, sem girar o calcanhar.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="block-deny">
+                            <h4>✕ Proibido</h4>
+                            <ul>
+                                <li><strong>Puxar pra guarda pulando:</strong> Pular sem pegada ou descontrolado.</li>
+                                <li><strong>Mão de vaca:</strong> Chave de pulso.</li>
+                                <li><strong>Chaves de perna avançadas:</strong> Knee bar, calf slicer, heel hook, toe hold.</li>
+                                <li>Bate-estaca (Slam), tesoura de queda.</li>
+                                <li>Ataques à coluna/cervical, chave de bíceps.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card card-blue">
+                        <h3 class="belt-title">🥋 Faixa Azul e Roxa (Adulto / Master)</h3>
+                        <div class="block-allow">
+                            <h4>✓ Em geral permitido</h4>
+                            <ul>
+                                <li>Tudo permitido para faixa branca.</li>
+                                <li><strong>Mão de vaca:</strong> Chaves de pulso legalizadas.</li>
+                                <li>Puxar pra guarda pulando (Adultos).</li>
+                            </ul>
+                        </div>
+                        <div class="block-deny">
+                            <h4>✕ Continua proibido</h4>
+                            <ul>
+                                <li>Chaves de joelho reta, chaves de panturrilha e bíceps.</li>
+                                <li>Qualquer chave de perna com torção (heel hook, toe hold).</li>
+                                <li>Bate-estaca, tesoura, chaves de cervical.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card card-black">
+                        <h3 class="belt-title">🥋 Faixa Marrom e Preta (Adulto / Master)</h3>
+                        <div class="block-allow">
+                            <h4>✓ Em geral permitido</h4>
+                            <ul>
+                                <li>Tudo das faixas anteriores.</li>
+                                <li><strong>Chave de joelho reta</strong> (Kneebar).</li>
+                                <li><strong>Chave de pé com torção</strong> (Toe hold / "Botinha" americana).</li>
+                                <li><strong>Chave de panturrilha</strong> (Calf slicer) e <strong>Chave de bíceps</strong> (Bicep slicer).</li>
+                            </ul>
+                        </div>
+                        <div class="block-deny">
+                            <h4>✕ Continua proibido (Com Kimono)</h4>
+                            <ul>
+                                <li><strong>Heel hook:</strong> Proibido na regra tradicional com pano.</li>
+                                <li>Bate-estaca (Slam), chaves de cervical, suplex jogando de cabeça.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="disclaimer-text">
+                    Essa lista é um resumo didático. Regras completas devem ser consultadas no livro oficial da federação.
+                </div>
+            </div>
+        </section>
+
+        <section id="dicas">
+            <div class="container">
+                <h2>Dicas para competir com segurança</h2>
+                <ul class="dicas-list">
+                    <li><strong>Estude as regras de pontuação:</strong> A estabilização de 3 segundos é essencial!</li>
+                    <li><strong>Pergunte ao professor:</strong> Se desenvolveu um golpe novo, confirme a legalidade antes do campeonato.</li>
+                    <li><strong>Atenção à balança:</strong> Chegue cedo para a pesagem (de Kimono).</li>
+                    <li><strong>Na dúvida, solte ou não faça:</strong> Evite leg locks mirabolantes se não tiver 100% de certeza.</li>
+                    <li><strong>Respeite o árbitro:</strong> A palavra final no tatame é dele.</li>
+                    <li><strong>Respeito acima de tudo:</strong> Cumprimente seu adversário. Represente bem a Equipe Invictus Fight.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2>Perguntas Frequentes (FAQ)</h2>
+                
+                <details>
+                    <summary>Faixa branca pode usar omoplata?</summary>
+                    <div class="faq-content">
+                        Sim! É permitido para faixa branca adulto/juvenil. Apenas crianças muito novas possuem restrição nessa chave.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Chave de pé é liberada pra branca?</summary>
+                    <div class="faq-content">
+                        Apenas a chave de pé <strong>reta</strong>, mantendo a perna por cima do quadril pelo lado de <strong>fora</strong>. Torcer o pé (toe hold) ou o joelho é proibido.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Posso lutar em categoria Adulto mesmo sendo Master?</summary>
+                    <div class="faq-content">
+                        Sim. Atletas Master (30+) podem optar por lutar no Adulto. O inverso não é permitido.
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>Criança pode atacar o pescoço?</summary>
+                    <div class="faq-content">
+                        Sim, estrangulamentos de lapela clássicos e mata-leão são permitidos, mas golpes frontais como guilhotina e estrangulamento Ezequiel possuem fortes restrições de idade para a segurança cervical.
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Logo Invictus Fight" onerror="this.src='image_0b7499.png'">
+                <div>Invictus Fight <span>Jiu-Jitsu</span> | Equipe André Soares</div>
+            </div>
+            <p class="footer-text">Conteúdo educativo para alunos da Invictus Fight. Não substitui as regras oficiais das federações de jiu-jitsu.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/invictus_fight/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Academia">Instagram</a>
+                <a href="https://wa.me/5531971314173" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Academia">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
